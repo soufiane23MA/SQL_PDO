@@ -1,3 +1,14 @@
+
+		
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
 <?php
 // connecter la base de donnée à PHP via PDO
 try {
@@ -41,30 +52,19 @@ catch (Exception $e)
 	foreach($recettes as $recette){
 		   
 		
-		 $resulte .= "<tr>";
-		 $resulte.= "<td style ='border:1px solid black;padding:12px;'><.$recette href='detailRecette?id=3".$recette['id_recette'].">".$recette['nom_recette']."</a></td>";
-		 $resulte.= "<td style ='border:1px solid black;padding:12px;'>".$recette['nom_categorie']."</td>";
-		$resulte .= "<td style ='border:1px solid black;padding:12px;'>".$recette["temps_preparation"]."</td>";
-		$resulte.= "</tr>";
-		
-		
-		 
-
-
+	$resulte .= "<tr>";
+	$resulte .= "<td style='border:1px solid black;padding:12px;'><a href='detailRecette.php?id=" . $recette['id_recette'] . "'>" . $recette['nom_recette'] . "</a></td>";
+	$resulte.= "<td style ='border:1px solid black;padding:12px;'>".$recette['nom_categorie']."</td>";
+	$resulte .= "<td style ='border:1px solid black;padding:12px;'>".$recette["temps_preparation"]."</td>";
+	$resulte.= "</tr>";
+	
 	};
 	$resulte .= "</table>";
 	 echo $resulte;
 
 	 ?>
-		
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-<body>
+
+
 	<a href="detailRecette.php">detaills</a>
 </body>
 </html>
